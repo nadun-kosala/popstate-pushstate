@@ -1,0 +1,83 @@
+.circles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.circle {
+    --circle-color: black; 
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 50%; 
+    cursor: pointer;
+    color: white;
+    background-color: var(--circle-color);
+    border: 5px solid var(--circle-color);
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    line-height: 200px; 
+    transition: transform 0.2s ease-out, background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.circle:hover {
+    background-color: transparent;
+    color: var(--circle-color);
+}
+
+.circle.selected {
+    transform: scale(1.2);
+}
+
+#circle-1 {
+    --circle-color: green;
+}
+
+#circle-2 {
+    --circle-color: orange;
+}
+
+#circle-3 {
+    --circle-color: blue;
+}
+
+#circle-4 {
+    --circle-color: black;
+}
+
+#circle-5 {
+    --circle-color: red;
+}
+
+#circle-6 {
+    --circle-color: violet;
+}
+
+.content {
+    margin: 20px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    color: #333;
+}
+
+.examples {
+    margin-top: 20px;
+}
+
+.code-block {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    color: #444;
+    overflow-x: auto;
+}

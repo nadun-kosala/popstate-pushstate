@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pushstate & Popstate</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <h1>Understanding PushState and PopState</h1>
+        <p>
+            The `pushState` and `popState` APIs are part of the HTML5 history API. They allow developers to modify the
+            browser's URL
+            and manage the user's navigation history without triggering a full page reload.
+        </p>
+
+        <h2>What is PushState?</h2>
+        <p>
+            The `pushState` method lets you add a new entry to the browser's history stack. It enables dynamic updates
+            to the URL
+            while staying on the same page.
+        </p>
+        <div class="code-block">
+            <code>
+                history.pushState(stateObject, title, url);
+            </code>
+        </div>
+        <p>Example:</p>
+        <div class="code-block">
+            <code>
+                history.pushState({ page: 1 }, "Page 1", "/page1");
+            </code>
+        </div>
+
+        <h2>What is PopState?</h2>
+        <p>
+            The `popState` event is triggered when the user navigates through the browser history (using the back or
+            forward buttons).
+            This allows developers to handle changes dynamically as the user interacts with the history.
+        </p>
+        <div class="code-block">
+            <code>
+                window.addEventListener('popstate', (event) => {
+                console.log("Location changed:", document.location);
+                console.log("State data:", event.state);
+                });
+            </code>
+        </div>
+
+        <h3>Interactive Example:</h3>
+        <p>Click on the circles below to see how the URL changes dynamically without reloading the page.</p>
+    </div>
+
+    <div class="circles">
+        <div class="circle" id="circle-1">1</div>
+        <div class="circle" id="circle-2">2</div>
+        <div class="circle" id="circle-3">3</div>
+        <div class="circle" id="circle-4">4</div>
+        <div class="circle" id="circle-5">5</div>
+        <div class="circle" id="circle-6">6</div>
+    </div>
+
+    <div class="content examples">
+        <h2>Usage Scenarios</h2>
+        <ul>
+            <li>Single Page Applications (SPAs) to enable navigation without full reloads.</li>
+            <li>Dynamic updates to URLs for sharing or bookmarking specific states.</li>
+            <li>Customizing user flows without server-side rendering for each change.</li>
+        </ul>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
